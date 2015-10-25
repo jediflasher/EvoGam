@@ -3,12 +3,12 @@ just some code
 
 > Create a sample MVC(S) Robotlegs project
 
-- I never used Robotlegs, Flex Unit (used tests in Ruby and Python) and Maven (used Ant only), so I spent more time than it was planned to read about it. 
+I never used Robotlegs, Flex Unit (used tests in Ruby and Python) and Maven (used Ant only), so I spent more time than it was planned to read about it. 
 Sorry, but I don't have enough time now to learn maven for test task (spent it to learn RL and Flex Unit). So there is no Maven configuration. 
 
 > Write method that takes two sorted arrays of integers
 
-- In utils.ArrayUtils you can find function to merge sorted arrays. 
+In utils.ArrayUtils you can find function to merge sorted arrays. 
 
 > Explain what does this code do
 
