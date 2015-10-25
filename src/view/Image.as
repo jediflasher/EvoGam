@@ -7,6 +7,8 @@ package view {
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 
+	import model.ImageData;
+
 	/**
 	 * @author              Roman
 	 * @version             1.0
@@ -36,6 +38,19 @@ package view {
 
 		//--------------------------------------------------------------------------
 		//
+		//  Properties
+		//
+		//--------------------------------------------------------------------------
+
+
+		override public function set data(value:ImageData):void {
+			if (super.data) data.waitingForContentChanged.remove(updateAlpha);
+			super.data = value;
+			if (super.data) data.waitingForContentChanged.add(updateAlpha);
+		}
+
+		//--------------------------------------------------------------------------
+		//
 		//  Variables
 		//
 		//--------------------------------------------------------------------------
@@ -57,9 +72,9 @@ package view {
 
 		public override function update():void {
 			super.update();
-			updateImage();
 
-			data.waitingForContentChanged.add(updateAlpha);
+			updateImage();
+			updateAlpha();
 		}
 
 		//--------------------------------------------------------------------------
@@ -69,7 +84,7 @@ package view {
 		//--------------------------------------------------------------------------
 
 		private function updateImage():void {
-			if (!data.content) return;
+			if (!data || !data.content) return;
 
 			_image.bitmapData = data.content;
 			if (_image) addChild(_image);
@@ -88,12 +103,16 @@ package view {
 				x: -scaledWidth / 2,
 				y: -scaledHeight / 2,
 				width: scaledWidth,
-				height: scaledHeight
+				height: scaledHeight,
+				alpha:1
 			});
 		}
 
 		private function updateAlpha():void {
-			_image.alpha = data.waitingForContent ? 0.5 : 1;
+			if (data && data.waitingForContent) {
+				var size:Number = 30;
+				TweenNano.to(_image, 0.5, {x:-size/2, y:-size/2, width:size, height:size, alpha:0.5});
+			}
 		}
 	}
 }
