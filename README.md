@@ -20,7 +20,7 @@ e4x magic
 
 > what’ s wrong with it
 
-You used 0x00A0 symbol (nbsp), which was interpreted as xml node, that not contains @myVal property. Ther is 2 ways to fix it: 
+You used 0x00A0 symbol (nbsp), which was interpreted as xml node, that not contains @myVal property. There is 2 ways to fix it: 
 
 1. Iterate over "node" children like: xmlData.node.(@myVal % 2 && trace(@myVal));
 2. Replace nbsp to space or tab.
