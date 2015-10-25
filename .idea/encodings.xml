@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/lib/as3-signals-v0.9-BETA.swc" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/lib/greensock.swc" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/AppContext.as" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Main.as" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/base/SignalCommandMap.as" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/model/ImageData.as" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/model/ImageListData.as" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/view/ImageMediator.as" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
