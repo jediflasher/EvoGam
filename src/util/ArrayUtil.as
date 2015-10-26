@@ -24,7 +24,12 @@ package util {
 			var k:int = 0;
 			var a1Len:int = array1.length;
 			var a2Len:int = array2.length;
-			var ascending:Boolean = array1.length > 1 ? array1[0] < array1[1] : array2[0] < array2[1];
+			var ascending:Boolean;
+			if (a1Len > 1) {
+				ascending = array1[0] < array1[a1Len - 1];
+			} else {
+				ascending = array2[0] < array2[a2Len - 1];
+			}
 
 			while (i < a1Len && j < a2Len) {
 				if ((ascending && array1[i] < array2[j]) || (!ascending && array1[i] > array2[j])) {
